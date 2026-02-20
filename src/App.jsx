@@ -8,7 +8,7 @@ function App() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const fetchEvents = () => {
-    fetch("http://localhost:5000/events")
+    fetch("https://event-platform-api-26yy.onrender.com")
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(err => console.error(err));
@@ -29,7 +29,7 @@ function App() {
       return;
     }
 
-    await fetch("http://localhost:5000/leads/save", {
+    await fetch("https://event-platform-api-26yy.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
